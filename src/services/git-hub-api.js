@@ -5,8 +5,8 @@ const service = axios.create({
 });
 
 const GIT_HUB_SERVICE = {
-  GET_ALL: async (owner, repo) => {
-    return await service.get(`/repos/${owner}/${repo}/issues`, {
+  GET_ALL: async (owner, repo, label) => {
+    return await service.get(`/repos/${owner}/${repo}/issues?labels=${label}`, {
       headers: {
         Accept: 'application/vnd.github.v3+json',
       },
